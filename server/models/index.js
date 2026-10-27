@@ -1,0 +1,6 @@
+const { Schema, model } = require('mongoose');
+const ref = n => ({ type: Schema.Types.ObjectId, ref: n, required: true });
+exports.User = model('User', new Schema({ name: { type: String, required: true, trim: true }, email: { type: String, required: true, unique: true, lowercase: true }, password: { type: String, required: true }, college: { type: String, trim: true, default: '' } }, { timestamps: true }));
+exports.Listing = model('Listing', new Schema({ owner: ref('User'), title: String, city: String, address: String, rent: Number, roomType: String, description: String, amenities: [String], imageUrl: String, available: { type: Boolean, default: true } }, { timestamps: true }));
+exports.Enquiry = model('Enquiry', new Schema({ listing: ref('Listing'), from: ref('User'), to: ref('User'), message: { type: String, required: true }, status: { type: String, enum: ['pending', 'accepted', 'declined'], default: 'pending' } }, { timestamps: true }));
+exports.Preference = model('Preference', new Schema({ user: { ...ref('User'), unique: true }, budget: Number, cleanliness: Number, lifestyle: String, studyHabit: String, city: String, bio: { type: String, default: '' } }, { timestamps: true }));
