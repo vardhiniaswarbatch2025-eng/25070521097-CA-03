@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+Your local README content
+=======
+GitHub README content
+>>>>>>> ...
 # Roomie Finder
 
 React (Vite) + Express + MongoDB. Passwords are hashed with bcryptjs (a drop-in for bcrypt that needs no C++ build tools on Windows). Auth uses JWT.
@@ -28,3 +33,6 @@ To run separately, use two terminals: `npm run start:server` and `npm run start:
 - `EADDRINUSE`: port 5000 or 5173 is busy; change `PORT` in `server/.env` and the proxy in `client/vite.config.js`.
 - `npm` blocked in PowerShell: run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
 - Blank listings page and "Request failed": the server is not running; check the `api` terminal output.
+=======
+# 25070521097-CA-03
+>>>>>>> 18d0f64729d9fca4a85c6b4148cdd0ba2b64d3e9
